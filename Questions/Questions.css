@@ -1,0 +1,85 @@
+#MainPagePublicQuestions{
+	background-color: rgb(236,236,236);
+	padding:45px 0;
+}
+#last-questions{
+	height: 250px;
+	overflow-y: scroll;	
+  	transition: all 0.7s linear;
+}
+#enteringQuestion{
+	height: 30px;
+	transition: all 0.7s linear;
+}
+.hide{
+	overflow-y: hidden!important;
+	height: 0px!important;
+}
+.deploy{
+	height: 200px!important;
+}
+.ui-items>div>p{
+	margin-bottom: 5px;
+}
+.ui-items>div>input{
+	margin-bottom: 5px;
+}
+.questionEmpty{
+	color: red;
+}
+.advokatResponse,.selfMessage{
+	border-bottom: 1px solid silver;
+	padding: 15px 0;
+}
+.questionData{
+	margin-top: 15px;
+}
+.questionData>div{
+	max-width: 220px;
+}
+.responseButton{
+	background-color:#2db72d;
+}
+.quitResponseButton{
+	background-color:#ca0808;
+}
+
+/*PublicQuestions*/
+#publicQuestions{
+	height: 450px;	
+    display: flex;
+    align-items: center;
+	background-image: url('mainPageBanner.png');
+}
+#publicQuestionsForm{
+	background-color: white;
+	padding: 35px 15px;
+}
+#publicQuestionsForm h2{
+	font-weight: bold;
+}
+#publicQuestionsForm>div>textarea{
+	height: 135px;
+	resize: none;
+}
+#publicQuestionsForm>div>input{
+	margin-top: 15px;
+	height: 45px;
+}
+#publicQuestionsForm>div>input:not(:last-child){
+	max-width: 200px;		
+}
+#mainPageSendMessage{
+	background-color: #960000;
+	color: white;
+}
+@media (max-width: 464px) {
+	#publicQuestions{
+		height: 570px;
+	}
+}
+@media (min-width: 464px) and (max-width: 768px) {
+	#publicQuestions{
+		height: 515px;
+	}
+}

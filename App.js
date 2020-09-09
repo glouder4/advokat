@@ -5,6 +5,9 @@ import Header from './components/Header/Header.js';
 import MainPagePublicQuestions from './components/Questions/MainPagePublicQuestions.js';
 import LeftSidebar from './components/LeftSidebar/LeftSidebar.js';
 import Uslugi from './components/Uslugi/Uslugi.js';
+import HowWeAreWorking from './components/HowWeAreWorking/HowWeAreWorking.js';
+import LastQuestions from './components/LastQuestions/LastQuestions.js';
+import AskedQuestions from './components/AskedQuestions/AskedQuestions.js';
 import './App.css';
 
 import OwlCarousel from 'react-owl-carousel2';
@@ -25,98 +28,11 @@ render() {
 		<UserPageQuestions />
 	</div>*/}	
 	<Uslugi />
+	<HowWeAreWorking />
+	<LastQuestions />
+	<AskedQuestions />
 {/*<ButtonBases />*/}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container-fluid block_4">
-<div class="row col-lg-12 ">
-<h1  class="col-lg-12">Как мы работаем</h1>
-<div class="col-lg-12  col-md-13 block_4_img"></div>
-<div  class="col-lg-5  col-md-5 block_4_but"></div>
-</div>
-</div>
-
-<div class="block_5">
-<h1 class="col-lg-12">Последние Вопросы</h1>
-
-{/*<Items />*/}
-</div>
-
-
-<div class="container-fluid">
-
-</div>
-
-<div class="container-fluid block_6 col-lg-12">
-<h1 class="col-lg-12">Задано Вопросов</h1>
-<div class=" row col-lg-12 block_6_one">
-<ul class="col-lg-6 block_6_one_item">
-
-<p>Бесплатная</p>
-<h5 >сегодня</h5>
-    <li>как оспорить неазаконный выписанный штраф за парковку</li> 
-    <h5 >сегодня</h5>
-    <li>fdf</li>
-    <h5 >сегодня</h5>
-    <li>fdfd</li>
-    <h5 >сегодня</h5>
-    <li>fdf</li>
-    <h5 >сегодня</h5>
-    <li>fdf</li>
-    <h5 >сегодня</h5>
-    <li>fdf</li>
-    <h5 >сегодня</h5>
-    <li>fdf</li> 
-    <h5 >сегодня</h5>
-    <li>fdfd</li>
-
-
-</ul>
-<ul class="col-lg-6 block_6_one_item">
-
-<p>Платные</p>
-<li>как оспорить неазаконный выписанный штраф за парковку</li> 
-    <h5 >сегодня</h5>
-    <li>fdf</li>
-    <h5 >сегодня</h5>
-    <li>fdfd</li>
-    <h5 >сегодня</h5>
-    <li>fdf</li>
-    <h5 >сегодня</h5>
-    <li>fdf</li>
-    <h5 >сегодня</h5>
-    <li>fdf</li>
-    <h5 >сегодня</h5>
-    <li>fdf</li> 
-    <h5 >сегодня</h5>
-    <li>fdfd</li>
-</ul>
-
-<a href="#" class="col-lg-4 but_consult">Заказать Консультацию</a>
-</div>
-
-
-
-
-
-
-
-</div>
 
 
 

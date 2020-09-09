@@ -1,0 +1,14 @@
+.workPoint{
+	max-width: 250px;
+}
+.workPoint>span{
+	font-size: 4em;
+}
+.workPoint>p{
+	font-style: bold;
+}
+#getConsult{
+	background-color: #960000;
+	color: white;
+	margin-bottom: 15px;
+}

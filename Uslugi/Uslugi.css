@@ -1,0 +1,14 @@
+.block_2_text{
+	height: 100px;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	font-size: 40px;
+}
+.usluga>.col-12{
+	border-bottom: 1px solid silver;
+}
+.usluga>img{
+	padding: 15px 35px;
+	border: 2px solid #960000;
+}

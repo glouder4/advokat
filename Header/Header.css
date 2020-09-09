@@ -1,0 +1,47 @@
+header{
+	margin:25px 0;
+}
+header>div>div>img{
+	max-height: 82px;
+	max-width: 268px!important;
+}
+header>div>div{
+	display: flex;
+}
+header>div>div>div{
+	margin-top: 25px;
+}
+.region,.region>a{
+	color: rgb(168,43,44);
+}
+.region>a{
+	border-bottom: dashed;
+}
+.telefone_menu{	
+	font-weight: bolder;
+}
+.telefone_menu>a{
+	font-size: 2em;
+	color: black;
+}
+.info_text{
+	font-weight: bold;
+}
+.telefone_menu p{
+	font-size: 20px;
+	color: red;
+}
+.menu_item ul{
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+	margin-top: 10px;
+}
+#navbarSupportedContent>.dropdown-divider{
+	border-top: 1px solid #cacaca;
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+	header>div>div>img{
+
+	}
+}
