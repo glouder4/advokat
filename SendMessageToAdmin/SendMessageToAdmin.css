@@ -1,0 +1,17 @@
+#SendMessageToAdmin{
+	position: fixed;
+	bottom: 0;
+	right: 15px;
+	background-color: #970000;
+	color: white;
+}
+.executorMessage p {
+	color:black;
+}
+.sendButton{
+	outline: none!important;
+}
+#messages{
+	max-height: 550px;
+	overflow: auto;
+}

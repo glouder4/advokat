@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import TextField  from '@material-ui/core/TextField';
+import UserPageMessages from './UserPageMessages.js';
+import { Link } from "react-router-dom";
+
 import './Questions.css';
 
 function responseQuestion(toState,questionNumber){
 	toState.setState({numberOfQuestionForResponse:questionNumber});
 	let enteringQuestion = document.getElementById('enteringQuestion').value;
 	let name = (toState.state.name).toString(); let lastName = (toState.state.lastName).toString();
-	if(enteringQuestion == '') toState.setState({questionDataEmpty:'questionEmpty'});
+	if(enteringQuestion === '') toState.setState({questionDataEmpty:'questionEmpty'});
 	else{
 		toState.setState({questionDataEmpty:''});
 		document.querySelector('#collapse'+questionNumber+'>.card-body>.conversations').innerHTML += `
@@ -27,9 +31,9 @@ function askQuestion(toState,questionNumber){
   		let questionTheme = document.getElementById('questionTheme').value;
   		let enteringQuestion = document.getElementById('enteringQuestion').value;
 
-  		if(questionTheme == '') toState.setState({questionThemeEmpty:'questionEmpty'});
-  		if(enteringQuestion == '') toState.setState({questionDataEmpty:'questionEmpty'});
-  		if( (questionTheme != '')&&(enteringQuestion != '') ){
+  		if(questionTheme === '') toState.setState({questionThemeEmpty:'questionEmpty'});
+  		if(enteringQuestion === '') toState.setState({questionDataEmpty:'questionEmpty'});
+  		if( (questionTheme !== '')&&(enteringQuestion != '') ){
   			toState.setState({questionThemeEmpty:''});
   			toState.setState({questionDataEmpty:''});
   			questions.push(
@@ -182,20 +186,24 @@ export default class UserPageQuestions extends Component {
 			    </div>
 			  </div>
 		)
-		await this.setState({selfQuestions:questions});
-   		await this.setState({ready:true});
+		await this.setState({
+			selfQuestions:questions,
+			ready:true
+		});
   	}  
   	handleOuterClick = (e) =>{
 	    const questionsBlock = document.getElementById('enteringQuestion');
-	   	if ((!e.path.includes(questionsBlock))&&(e.path[0].innerText != 'Ответить')){
-	   		document.getElementById('last-questions').classList.remove("hide");
-	   		document.getElementById('enteringQuestion').classList.remove("deploy");
+	   	if ((!e.path.includes(questionsBlock))&&(e.path[0].innerText !== 'Ответить')){
+	   		if(document.getElementById('last-questions') != null) document.getElementById('last-questions').classList.remove("hide");
+	   		if(document.getElementById('enteringQuestion') != null) document.getElementById('enteringQuestion').classList.remove("deploy");
 	   	}
-	   	if(e.path[0].innerText == 'Задайте Вопрос') toState.setState({numberOfQuestionForResponse:0});
+	   	if(e.path[0].innerText === 'Задайте Вопрос') toState.setState({numberOfQuestionForResponse:0});
 	}
   	questionEntering = (e) =>{
 	    document.getElementById("last-questions").classList.add("hide"); 
 	    document.getElementById("enteringQuestion").classList.add("deploy"); 
+	    toState.setState({questionDataEmpty:''});
+	    toState.setState({questionThemeEmpty:''});
   	}
   	render() {  
   		if(!this.state.ready) return( 
@@ -203,19 +211,21 @@ export default class UserPageQuestions extends Component {
 				Пока пусто
 			</div>
   		);	
-  		if(this.state.numberOfQuestionForResponse != 0){
+  		if(this.state.numberOfQuestionForResponse !== 0){
   			return(
 	  			<div id="MainPagePublicQuestions" className="container-fluid mx-auto col-lg-9">
 					<div className="p-0 row mx-auto">					
 						<div className="col-12">
-							<h3>Мои вопросы</h3>
+							<div className="row ml-0 mr-0 justify-content-between">
+								<h3>Мои вопросы</h3><h3><Link className="nav-link" id="toMessages" to="/Messages">Мои сообщения</Link></h3>
+							</div>							
 							<div id="last-questions">						  
 							  {this.state.selfQuestions}
 							</div>
 							<div className="ui-items p-0">
-								<div className={"d-none  "+this.state.questionThemeEmpty}>
-									<p>Тема: </p> <input type="text" id="questionTheme" maxlength="75" className="col-9"/>
-								</div>
+								<form className={"d-none  "+this.state.questionThemeEmpty} noValidate autoComplete="off">
+						          <TextField id="questionTheme" type="text" label="Тема" maxlength="75" className="col-9" />          
+						        </form>
 								<div className={""+this.state.questionDataEmpty}>
 									<p>Ваш вопрос: </p> <textarea id="enteringQuestion" onClick={this.questionEntering} rows="1" className=" col-md-12 col-lg-12" name="Ваш запрос" placeholder="ваш вопрос"></textarea>
 								</div>							
@@ -227,27 +237,60 @@ export default class UserPageQuestions extends Component {
 	  		);
   		}  
   		else{
-  			return(
+  			let questionDataOutput = []; let questionThemeOutput = [];
+  			if(this.state.questionDataEmpty != '') questionDataOutput = (
+  				<TextField
+		          error
+		          id="enteringQuestion"
+		          label="Ошибка"
+		          defaultValue=""
+		          helperText="Incorrect entry."
+		          variant="outlined"
+		          multiline
+		          className=" col-md-12 col-lg-12"
+		          onClick={this.questionEntering}
+		        />
+  			);
+  			else questionDataOutput = (
+  				<TextField
+		          id="enteringQuestion"
+		          label="Ваш вопрос"
+		          defaultValue=""
+		          variant="outlined"
+		          multiline
+		          className=" col-md-12 col-lg-12"
+		          onClick={this.questionEntering}
+		        />
+  			);
+  			if(this.state.questionThemeEmpty != '') questionThemeOutput = (
+  				<TextField error id="questionTheme" type="text" label="Ошибка" helperText="Incorrect entry." variant="outlined" maxlength="75" className="col-9" />
+  				);
+  			else questionThemeOutput =(
+  				<TextField id="questionTheme" type="text" label="Тема" variant="outlined" maxlength="75" className="col-9" />
+  			);
+			return(
 	  			<div id="MainPagePublicQuestions" className="container-fluid mx-auto col-lg-9">
 					<div className="p-0 row mx-auto">					
 						<div className="col-12">
-							<h3>Мои вопросы</h3>
+							<div className="row ml-0 mr-0 justify-content-between">
+								<h3 onClick={function(){ toState.setState({activeMessages:false}) }}>Мои вопросы</h3><h3><Link className="nav-link" id="toMessages" to="/Messages">Мои сообщения</Link></h3>
+							</div>	
 							<div id="last-questions">						  
 							  {this.state.selfQuestions}
 							</div>
 							<div className="ui-items p-0">
-								<div className={""+this.state.questionThemeEmpty}>
-									<p>Тема: </p> <input type="text" id="questionTheme" maxlength="75" className="col-9"/>
-								</div>
+								<form className={""+this.state.questionThemeEmpty} noValidate autoComplete="off">
+						          {questionThemeOutput}         
+						        </form>
 								<div className={""+this.state.questionDataEmpty}>
-									<p>Ваш вопрос: </p> <textarea id="enteringQuestion" onClick={this.questionEntering} rows="1" className=" col-md-12 col-lg-12" name="Ваш запрос" placeholder="ваш вопрос"></textarea>
+									{questionDataOutput}
 								</div>							
 								<input type="submit" onClick={function(){ askQuestion(toState,toState.state.numberOfQuestionForResponse) }} className="col-lg-4 col-md-4 text_form"/>
 							</div>						
 						</div>
 					</div>
 				</div>
-	  		);
+	  		);	
   		}		 
 	}
 }

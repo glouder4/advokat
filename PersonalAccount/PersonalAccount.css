@@ -1,0 +1,95 @@
+#accountInfo>div>div{
+	font-size: 21px;
+	font-weight: 500;
+}
+#accountInfo>.col-lg-9{
+	padding-bottom: 10px;
+	border-bottom: 1px solid black;
+}
+#accountInfo .accountBalance{
+	text-decoration: underline;;
+}
+#accountPhoto .btn{
+	background-color: #d1d0d0;
+	margin-top: 15px;
+}
+#photoRequirement ul{
+	list-style: decimal;
+}
+#saveInfo,#deleteAccount{
+	background-color: #970000!important;
+	color: white;
+}
+#deleteAccountPassword,#amount{
+	max-width: 300px;
+	padding: 4px;
+	margin-bottom: 35px;
+}
+#variants{
+	background-color: #e8e8e8;
+	padding: 15px;
+}
+#variants>div{
+	background-color: white;
+	margin-top: 15px;
+	padding:15px;
+	height: 175px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#variants img{
+	margin: auto;
+	max-width: 210px;
+}
+.settingsParam{
+	max-width: 250px;
+	margin-bottom: 25px;
+}
+#myBalance{
+	margin-top: 15px;
+}
+#withdrawHistory{
+	margin-top: 15px;
+}
+#rules{
+	margin-bottom: 15px;
+}
+#myStats{
+	padding-top: 45px;
+	padding-bottom: 45px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+#savePriceList,#importPriceList,#saveEducation,#saveEdits,#changeMail,#rememmberPassword,#ChangePasswordBtn{
+	background-color: #970000;
+	color: white;
+}
+#PriceList>div>input{
+	height: 30px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+#LegalAssistance{
+	margin-top: 15px;
+	border-top: 1px solid black;
+	padding-top:15px;
+}
+#Career .careerData,#saveEducation{
+	margin-top: 15px;
+}
+.editAddres{
+	color: #970000;
+	border-bottom: dashed;
+	width: fit-content;
+	margin-bottom: 15px;
+	font-size:13px;
+	cursor: pointer;
+}
+@media(max-width: 768px){
+	#accountPhoto img{
+		max-width: 200px;
+		margin: auto;
+		margin-top: 15px;
+	}
+}

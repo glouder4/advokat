@@ -40,6 +40,9 @@ header>div>div>div{
 #navbarSupportedContent>.dropdown-divider{
 	border-top: 1px solid #cacaca;
 }
+.telefone_menu>p{
+	cursor: pointer;
+}
 @media (min-width: 992px) and (max-width: 1200px) {
 	header>div>div>img{
 

@@ -8,6 +8,10 @@ import Uslugi from './components/Uslugi/Uslugi.js';
 import HowWeAreWorking from './components/HowWeAreWorking/HowWeAreWorking.js';
 import LastQuestions from './components/LastQuestions/LastQuestions.js';
 import AskedQuestions from './components/AskedQuestions/AskedQuestions.js';
+import Footer from './components/Footer/Footer.js';
+
+import AskCall from './components/popup/AskCall.js';
+
 import './App.css';
 
 import OwlCarousel from 'react-owl-carousel2';
@@ -31,38 +35,10 @@ render() {
 	<HowWeAreWorking />
 	<LastQuestions />
 	<AskedQuestions />
+	<Footer />
+	<AskCall />
 {/*<ButtonBases />*/}
-
-
-
-
-
-<div class="container-fluid block_8 ">
-
-<div class=" row block_8_row col-lg-7 mx-auto">
-<div class="col-lg-4  col-md-4 block_8_item">
-<h2>Задайте вопрос</h2>
-<p style={{'font-size':'20px'}}>
-и получите ответ на него от одного, 
-из наших юристов.
-совершенно Бесплатно
-</p>
-
-</div>
-<div class="col-lg-8  col-mnd-7 block_8_item">
-
-<textarea rows="10" cols="45" class=" col-md-12 col-lg-12" name="Ваш запор" placeholder="ваш вопрос"></textarea>
-<input type="text" class="col-lg-4 col-md-4 text_form"/>
-<input type="text"  class="col-lg-4 col-md-4  text_form"/>
-<input type="submit"  class="col-lg-4 col-md-4 text_form"/>
-
-</div>
-
-
-</div>
-
-</div>
-<div class="block_9">
+{/*<div class="block_9">
 <h1 class="col-lg-12">Вопросы в теме</h1>
 <div class="row   col-lg-9  mx-auto block_9_row">
 <ul class="col-lg-3">
@@ -212,33 +188,9 @@ render() {
 
 
 </div>
-</div>
-<div class="container-fluid  recomandations_one">
-
-
-{/*<Test/>*/}
-
-
-</div>
-
-
-<div class="container-fluid recomandations">
-<h3 class="h3">Виртуальный Журнал</h3>
-
-{/*<ItemsJur />*/}
-<input type="submit" class="state mx-auto"/>
-
-</div>
-
-
-
-
-
-
+</div>*/}
 </body>
-
-
- );
+);
 }
 
 

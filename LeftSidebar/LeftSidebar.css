@@ -13,10 +13,22 @@
 	margin-top: 5px;
 	width: 100%;
 }
-.info_form_buttons>ul>li:first-child{
+.info_form_buttons>ul>.active{
 	color: rgb(155,16,16);
 	font-weight: bold;
 }
-.info_form_buttons>ul>li:not(:first-child){
+.info_form_buttons>ul>li:not(.active){
 	padding-left: 15px;
+}
+.executor{
+	padding-top:15px!important;
+}
+.executor img{
+	width: 200px;
+	height: 210px;
+	margin-left: -30px;
+	margin-top: -30px;
+}
+#leftSidebar ul {
+	list-style: none;
 }

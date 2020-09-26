@@ -41,7 +41,7 @@ export default class AskedQuestions extends Component {
 					    	<span className="text-right">12 ответов</span>
 					    </li> 
 					</ul>
-					<div className="col-8 col-md-4 mx-auto btn">Заказать Консультацию</div>
+					<div className="col-8 col-md-4 mx-auto btn" onClick={function(){ document.getElementById('askCall').classList.remove('d-none'); }}>Заказать Консультацию</div>
 				</div>
 			</div>
 		);

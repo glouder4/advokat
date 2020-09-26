@@ -1,0 +1,33 @@
+footer{
+	margin-top: 25px;
+	background-color: #272b2e;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+footer,footer a{
+	color: white;
+}
+footer .telefone_menu>a {
+    font-size: 2em;
+    color: white;
+}
+footer .footer-social{
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+footer .footer-social-link:not(:last-child){
+	margin-right: 15px;
+}
+footer .footer-social-link{
+	background-color: #3d4143;
+	border-radius: 50%;
+    padding: 15px;
+}
+footer .footer-social-link>i{
+	width: 25px;
+	text-align: center;
+	font-size: 22px;
+}
+footer .social-links{
+	max-width: 310px;
+}

@@ -39,8 +39,8 @@ export default class HowWeAreWorking extends Component {
 							<p className="col-10">Вы получаете ответ на свой вопрос</p>
 						</div>
 					</div>
-					<div  class="col-8 col-md-4 mx-auto">
-						<div id="getConsult" className="btn">Получить бесплатную консультацию</div>
+					<div className="col-8 col-md-5 p-0 mx-auto text-center">
+						<div id="getConsult" className="btn" onClick={function(){ document.getElementById('askCall').classList.remove('d-none'); }}>Получить бесплатную консультацию</div>
 					</div>
 				</div>
 			</div>
